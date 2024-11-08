@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 
-void toggle_case(char str[]) {
+void toggleCase(char str[]) {
 	for(; *str; ++str) {
 		if(*str >= 'A' && *str <= 'Z')
 			*str = *str + ('a' - 'A');
@@ -18,7 +18,7 @@ void reverse(char str[], int len) {
 		}
 }
 
-void reverse_words(char str[]) {
+void reverseLetters(char str[]) {
 		while(*str) {
 				int word_end = 0;
 				while(*str == ' ')
@@ -32,22 +32,22 @@ void reverse_words(char str[]) {
 		}
 }
 
-void reverse_word_order(char str[]) {
+void reverseWords(char str[]) {
 		reverse(str, strlen(str));
-		reverse_words(str);
+		reverseLetters(str);
 }
 
 int main() {
 		char input1[] = "AbX 1D2 !a";
-		toggle_case(input1);
+		toggleCase(input1);
 		std::cout << input1 << '\n';
 
 		char input2[] = "hello bye";
-		reverse_words(input2);
+		reverseLetters(input2);
 		std::cout << input2 << '\n';
 
 		char input3[] = "hello bye";
-		reverse_word_order(input3);
+		reverseWords(input3);
 		std::cout << input3 << '\n';
 
 		return 0;
